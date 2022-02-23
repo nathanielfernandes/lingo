@@ -110,32 +110,3 @@ func GetFilePaths(start string, gitignore bool) []File {
 
 	return filePaths
 }
-
-func GetFilePath1s(start string) []File {
-	FilePaths := []File{}
-
-	err := filepath.Walk(start,
-		func(path string, info os.FileInfo, err error) error {
-			if err != nil {
-				return err
-			}
-
-			if strings.HasPrefix(path, ".git") || info.IsDir() {
-				return nil
-			}
-
-			lang, ok := GetIdentity(info.Name())
-			if !ok {
-				return nil
-			}
-
-			FilePaths = append(FilePaths, File{lang, path})
-			return nil
-		})
-
-	if err != nil {
-		log.Println(err)
-	}
-
-	return FilePaths
-}
