@@ -2,6 +2,7 @@ package lingo
 
 import (
 	"sort"
+	"strings"
 	"sync"
 )
 
@@ -20,6 +21,9 @@ func (l *Language) FileCount() int {
 
 func (l *Language) CountLines() {
 	for _, fp := range l.Files {
+		if strings.HasSuffix(fp, "package-lock.json") {
+			continue
+		}
 		wg.Add(1)
 		go l.addLineCount(fp)
 	}
