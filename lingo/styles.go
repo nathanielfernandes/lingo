@@ -17,6 +17,7 @@ var (
 	subtle    = lipgloss.AdaptiveColor{Light: "#D9DCCF", Dark: "#383838"}
 	highlight = lipgloss.AdaptiveColor{Light: "#874BFD", Dark: "#7D56F4"}
 	special   = lipgloss.AdaptiveColor{Light: "#43BF6D", Dark: "#73F59F"}
+	text      = lipgloss.AdaptiveColor{Light: "#212121", Dark: "#FFF7DB"}
 
 	divider = lipgloss.NewStyle().
 		SetString("•").
@@ -32,7 +33,7 @@ var (
 	// Dialog.
 	dialogBoxStyle = lipgloss.NewStyle().
 			Border(lipgloss.RoundedBorder()).
-			BorderForeground(lipgloss.Color("#874BFD")).
+			BorderForeground(highlight).
 			Padding(1, 0).
 			BorderTop(true).
 			BorderLeft(true).
@@ -50,7 +51,7 @@ var (
 			SetString("Lip Gloss").
 			BorderBottom(true)
 
-	bold = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#FFF7DB"))
+	bold = lipgloss.NewStyle().Bold(true).Foreground(text)
 
 	boldSpec = lipgloss.NewStyle().Bold(true).Foreground(special)
 
