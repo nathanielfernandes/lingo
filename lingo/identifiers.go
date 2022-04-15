@@ -1412,4 +1412,19 @@ var /* const */ LANGUAGE_IDENTIFIERS = map[string]LanguageIdentifier{
 		},
 		"#ff3e00",
 	},
+	"elixir": {
+		[]string{
+			"Elixir",
+			"elixir",
+		},
+		[]string{
+			".exs", 
+			".ex", 
+			".heex",
+		},
+		[]string{
+			"",
+		},
+		"#9542f5",
+	},
 }
